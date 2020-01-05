@@ -25,11 +25,16 @@ class Contact extends Component {
       company,
       address
     } = this.props.contact;
+
     return (
       <div className="container">
         <h1 className="contact-h1">
           name: {name}{" "}
-          <i onClick={this.onClickToggle} class="fas fa-caret-down" />
+          <i
+            style={{ color: "#0018A8" }}
+            onClick={this.onClickToggle}
+            class="fas fa-caret-down"
+          />
           <i
             class="fas fa-trash-alt"
             style={{ float: "right", color: "red" }}

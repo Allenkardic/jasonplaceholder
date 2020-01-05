@@ -2,7 +2,11 @@ import React from "react";
 
 function About() {
   return (
-    <div>
+    <div
+      style={{
+        margin: "2rem 2rem"
+      }}
+    >
       <h1 style={{ marginTop: "1rem", marginBottom: "1rem" }}>
         What is the app about!!!!
       </h1>

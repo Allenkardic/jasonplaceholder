@@ -6,7 +6,8 @@
 .container-form {
   display: flex;
   flex-direction: column;
-  border: 2px solid gray;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
   margin: 2rem 2rem;
   padding: 2rem 4rem;
 }
@@ -18,11 +19,13 @@
 }
 
 .btn {
-  width: 100%;
+  width: 150px;
   height: 5vh;
   font-size: 1.5em;
-  background-color: rgb(32, 35, 42);
-  border-color: rgb(32, 35, 42);
+  background-color: rgb(109, 10, 10);
+  border-color: rgb(109, 10, 10);
+  border-radius: 40px;
+  float: right;
   color: whitesmoke;
 }
 

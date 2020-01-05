@@ -5,20 +5,37 @@ import { connect } from "react-redux";
 import "../../css/AddContact.css";
 
 class AddContact extends Component {
-  state = { name: "", email: "", phone: "" };
+  state = {
+    name: "",
+    email: "",
+    phone: "",
+    website: "",
+    company: "",
+    address: ""
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { name, email, phone } = this.state;
+    const { name, email, phone, website, company, address } = this.state;
     const newContact = {
       name,
       phone,
-      email
+      email,
+      website,
+      company,
+      address
     };
 
     this.props.addContact(newContact);
 
-    this.setState({ name: "", email: "", phone: "" });
+    this.setState({
+      name: "",
+      email: "",
+      phone: "",
+      website: "",
+      company: "",
+      address: ""
+    });
 
     this.props.history.push("/");
   };
@@ -28,7 +45,7 @@ class AddContact extends Component {
   };
 
   render() {
-    const { name, email, phone } = this.state;
+    const { name, email, phone, website, company, address } = this.state;
     return (
       <div className="container-form">
         <form onSubmit={this.handleSubmit}>
@@ -58,7 +75,31 @@ class AddContact extends Component {
             onChange={this.handleChange}
             className="input-inner"
           />
-          <button>SUBMIT</button>
+          <input
+            type="text"
+            placeholder="Enter your website"
+            name="website"
+            value={website}
+            onChange={this.handleChange}
+            className="input-inner"
+          />
+          <input
+            type="text"
+            placeholder="Enter company name"
+            name="company"
+            value={company.name}
+            onChange={this.handleChange}
+            className="input-inner"
+          />
+          <input
+            type="address"
+            placeholder="Enter your address"
+            name="address"
+            value={address.zipcode}
+            onChange={this.handleChange}
+            className="input-inner"
+          />
+          <button className="btn">SUBMIT</button>
         </form>
       </div>
     );

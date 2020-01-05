@@ -11,7 +11,7 @@ class Navbar extends Component {
   render() {
     const { brand, addContact, contacts, about } = this.props;
     return (
-      <div>
+      <div className="navbar">
         <div className="navbar-des">
           <div className="navbar-des-one">
             <h2 className="brand">

@@ -5,14 +5,28 @@ import { connect } from "react-redux";
 import "../../css/AddContact.css";
 
 class EditContact extends Component {
-  state = { name: "", email: "", phone: "" };
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      email: "",
+      phone: "",
+      website: "",
+      company: "",
+      address: ""
+    };
+    console.log("state", this.state);
+  }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    const { name, email, phone } = nextProps.item;
+    const { name, email, phone, website, company, address } = nextProps.item;
     this.setState({
       name,
       email,
-      phone
+      phone,
+      website,
+      company,
+      address
     });
   }
 
@@ -27,24 +41,34 @@ class EditContact extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { name, email, phone } = this.state;
+    const { name, email, phone, website, company, address } = this.state;
     const { id } = this.props.match.params;
     const updContact = {
       id,
       name,
       phone,
-      email
+      email,
+      website,
+      company,
+      address
     };
 
     this.props.updateContact(updContact);
 
-    this.setState({ name: "", email: "", phone: "" });
+    this.setState({
+      name: "",
+      email: "",
+      phone: "",
+      website: "",
+      company: "",
+      address: ""
+    });
 
     this.props.history.push("/");
   };
 
   render() {
-    const { name, email, phone } = this.state;
+    const { name, email, phone, website, company, address } = this.state;
     return (
       <div className="container-form">
         <form onSubmit={this.handleSubmit}>
@@ -74,7 +98,31 @@ class EditContact extends Component {
             onChange={this.handleChange}
             className="input-inner"
           />
-          <button>SUBMIT</button>
+          <input
+            type="text"
+            placeholder="Enter your website"
+            name="website"
+            value={website}
+            onChange={this.handleChange}
+            className="input-inner"
+          />
+          <input
+            type="text"
+            placeholder="Enter company name"
+            name="company"
+            value={company.name}
+            onChange={this.handleChange}
+            className="input-inner"
+          />
+          <input
+            type="text"
+            placeholder="address"
+            name="address"
+            value={address.zipcode}
+            onChange={this.handleChange}
+            className="input-inner"
+          />
+          <button className="btn">SUBMIT</button>
         </form>
       </div>
     );

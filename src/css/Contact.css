@@ -1,5 +1,8 @@
 .container {
-  border: 2px solid gray;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  color: black;
   margin: 1rem 2rem;
   padding: 2rem 2rem;
 }
@@ -10,7 +13,7 @@
 }
 
 .container-inner-li {
-  border: 2px solid gray;
+  border: 2px solid whitesmoke;
   padding: 1rem 2rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -27,9 +30,24 @@
   background-color: gray;
 }
 
+.contact-details {
+  margin-top: 3rem;
+  padding: 1rem 1rem;
+  border: 2px solid aliceblue;
+  background-color: aliceblue;
+  color: black;
+}
+
+.edit-link {
+  text-decoration: line underline;
+  color: red;
+}
+
 @media screen and (max-width: 800px) {
   .container {
-    border: 2px solid gray;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    background-color: whitesmoke;
     margin: 1rem 1rem;
     padding: 2rem 1rem;
   }
@@ -44,7 +62,7 @@
   }
 
   .container-inner-li {
-    border: 2px solid gray;
+    border: 2px solid whitesmoke;
     padding: 1rem 1rem;
     margin-left: 0rem;
     margin-right: 0rem;
@@ -53,7 +71,9 @@
 
 @media screen and (max-width: 750px) {
   .container {
-    border: 2px solid gray;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    background-color: whitesmoke;
     margin: 1rem 1rem;
     padding: 2rem 1rem;
   }
