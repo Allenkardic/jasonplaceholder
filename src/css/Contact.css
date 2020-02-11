@@ -1,46 +1,92 @@
 .container {
-  border: 2px solid whitesmoke;
-  border-radius: 5px;
-  background-color: whitesmoke;
-  color: black;
   margin: 1rem 2rem;
-  padding: 2rem 2rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 1rem 2rem;
+  border: 0.2px solid whitesmoke;
+}
+
+th:first-child {
+  width: 30%;
+}
+
+td:first-child {
+  width: 90%;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  background-color: gainsboro;
+  color: rgb(32, 35, 42);
+  font-size: 1.2em;
+  padding: none;
+}
+
+.search-field {
+  background-color: white;
+  border-radius: 2rem;
+  height: 2rem;
+  padding-left: 1rem;
+}
+
+.search-field:hover {
+  box-shadow: 1px 0.1px 1px 1px whitesmoke;
+}
+
+.search-field-icon {
+  color: gray;
+  font-size: 0.7em;
+}
+
+input {
+  width: 90%;
+  height: 2rem;
+  font-size: 0.9em;
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+
+.contact-down {
+  color: blue;
+}
+
+.contact-delete {
+  float: right;
+  color: red;
+}
+
+.contact-edit {
+  color: blue;
 }
 
 .container-inner,
 .container-inner-li {
+  padding: 1rem 1rem;
   list-style: none;
+  background-color: rgb(32, 35, 42);
+  color: white;
 }
 
-.container-inner-li {
-  border: 2px solid whitesmoke;
-  padding: 1rem 2rem;
+.container-inner-content {
   margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-/* contact section */
-
-.contact-header {
-  border: 2px solid black;
-  margin-top: 1rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
-  padding: 1rem 2rem;
-  background-color: gray;
+  color: goldenrod;
 }
 
 .contact-details {
-  margin-top: 3rem;
-  padding: 1rem 1rem;
-  border: 2px solid aliceblue;
-  background-color: aliceblue;
-  color: black;
-}
-
-.edit-link {
-  text-decoration: line underline;
-  color: red;
+  margin-top: 1rem;
 }
 
 @media screen and (max-width: 800px) {

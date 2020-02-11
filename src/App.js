@@ -17,8 +17,8 @@ function App() {
         <div className="App">
           <Navbar
             brand="Jason"
-            addContact="addContact"
-            contacts="contacts"
+            addContact="Add Contact"
+            contacts="Contacts"
             about="About"
           />
           <Switch>

@@ -10,6 +10,7 @@ class Navbar extends Component {
   };
   render() {
     const { brand, addContact, contacts, about } = this.props;
+    console.log("here", this.props);
     return (
       <div className="navbar">
         <div className="navbar-des">
@@ -113,8 +114,7 @@ export default Navbar;
 
 Navbar.propTypes = {
   brand: PropTypes.string.isRequired,
-  home: PropTypes.string.isRequired,
+  contacts: PropTypes.string.isRequired,
   addContact: PropTypes.string.isRequired,
-  listTodos: PropTypes.string.isRequired,
   about: PropTypes.string.isRequired
 };

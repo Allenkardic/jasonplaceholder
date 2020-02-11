@@ -27,37 +27,52 @@ class Contact extends Component {
     } = this.props.contact;
 
     return (
-      <div className="container">
-        <h1 className="contact-h1">
-          name: {name}{" "}
-          <i
-            style={{ color: "#0018A8" }}
-            onClick={this.onClickToggle}
-            class="fas fa-caret-down"
-          />
-          <i
-            class="fas fa-trash-alt"
-            style={{ float: "right", color: "red" }}
-            onClick={this.onClickDelete.bind(this, id)}
-          />
-          <Link to={`/editcontact/${id}`}>
-            <i
-              style={{
-                float: "right",
-                marginRight: "0.5rem",
-                color: "blue"
-              }}
-              class="fas fa-user-edit"
-            />
-          </Link>
-        </h1>
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                {" "}
+                {name}{" "}
+                <i
+                  onClick={this.onClickToggle}
+                  className="fas fa-caret-down contact-down"
+                />
+              </td>
+              <td>
+                <i
+                  className="fas fa-trash-alt contact-delete"
+                  onClick={this.onClickDelete.bind(this, id)}
+                />
+
+                <Link to={`/editcontact/${id}`}>
+                  <i className="fas fa-user-edit contact-edit" />
+                </Link>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
         {this.state.toggle ? (
           <ul className="container-inner">
-            <li className="container-inner-li">email: {email}</li>
-            <li className="container-inner-li">phone: {phone}</li>
-            <li className="container-inner-li">website: {website}</li>
-            <li className="container-inner-li">company name: {company.name}</li>
-            <li className="container-inner-li">zipcode: {address.zipcode}</li>
+            <li className="container-inner-li">
+              Email: <span className="container-inner-content">{email}</span>
+            </li>
+            <li className="container-inner-li">
+              Phone: <span className="container-inner-content">{phone}</span>
+            </li>
+            <li className="container-inner-li">
+              Website:{" "}
+              <span className="container-inner-content">{website}</span>
+            </li>
+            <li className="container-inner-li">
+              Company name:{" "}
+              <span className="container-inner-content">{company.name}</span>
+            </li>
+            <li className="container-inner-li">
+              Zipcode:{" "}
+              <span className="container-inner-content">{address.zipcode}</span>
+            </li>
           </ul>
         ) : null}
       </div>
